@@ -9,7 +9,7 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title> TOKO KOPI KOOPEN | <?= $title ?></title>
+    <title> e-Resume | <?= $title ?></title>
     <link rel="icon" type="image/png" href="<?= base_url() ?>assets/client/images/icons/koopen.png" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
@@ -80,7 +80,7 @@
                     <ul class="nav navbar-nav float-right">
 
                         <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                                <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600"><?= userdata('nama_lengkap'); ?></span><span class="user-status">Online</span></div><span><img class="round" src="<?= base_url() ?>assets/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
+                                <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600"><?= userdata('nama'); ?></span><span class="user-status">Online</span></div><span><img class="round" src="<?= base_url() ?>assets/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="<?= site_url('admin/profile') ?>"><i class="feather icon-user"></i> Edit Profile</a>
                                 <div class="dropdown-divider"></div><a class="dropdown-item" href="<?= site_url('admin/auth/logout/'); ?>"><i class="feather icon-power"></i> Logout</a>
@@ -100,7 +100,7 @@
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mr-auto"><a class="navbar-brand" href="<?= base_url() ?>assets/html/ltr/vertical-menu-template-semi-dark/index.html">
                         <div class="feather icon-copyrigth"></div>
-                        <h2 class="brand-text mb-0"><i class="feather icon-coffee"></i>KOOPEN</h2>
+                        <h2 class="brand-text mb-0"><i class="feather icon-coffee"></i>e-Resume</h2>
                     </a></li>
                 <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
             </ul>
@@ -112,45 +112,25 @@
                 <li <?= $this->uri->segment(1) == 'dashboard' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('admin/dashboard') ?>"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a>
                 </li>
 
-                <li class=" navigation-header"><span>Kelola Website</span>
+                <li class=" navigation-header"><span>Kelola Biodata</span>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-edit-2"></i><span class="menu-title" data-i18n="Data List">Main Menu</span></a>
+                <li class=" nav-item"><a href="#"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Data List">Biodata</span></a>
                     <ul class="menu-content">
-                        <li <?= $this->uri->segment(1) == 'slide' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('admin/slide') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">Content slide</span></a>
+                        <li <?= $this->uri->segment(1) == 'slide' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('admin/slide') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">Education</span></a>
                         </li>
-                        <li <?= $this->uri->segment(1) == 'as' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="data-thumb-view.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">Contact</span></a>
+                        <li <?= $this->uri->segment(1) == 'as' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('tes')?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">Experience</span></a>
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-shopping-cart"></i><span class="menu-title" data-i18n="Data List">Data Barang</span></a>
+                <li class=" nav-item"><a href="#"><i class="feather icon-edit-2"></i><span class="menu-title" data-i18n="Data List">Resume</span></a>
                     <ul class="menu-content">
-                        <li <?= $this->uri->segment(1) == 'kproduk' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('admin/kproduk') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">Kategori Barang</span></a>
+                        <li <?= $this->uri->segment(1) == 'slide' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('education') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">Education</span></a>
                         </li>
-                        <li <?= $this->uri->segment(1) == 'barang' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('admin/barang') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">Barang</span></a>
+                        <li <?= $this->uri->segment(1) == 'as' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('experience')?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">Experience</span></a>
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-book-open"></i><span class="menu-title" data-i18n="Data List">Artikel</span></a>
-                    <ul class="menu-content">
-                        <li <?= $this->uri->segment(1) == 'kartikel' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('admin/kartikel') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">Kategori Artikel</span></a>
-                        </li>
-                        <li <?= $this->uri->segment(1) == 'posting' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('admin/posting') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">Posting Artikel</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-map"></i><span class="menu-title" data-i18n="Data List">Outlet</span></a>
-                    <ul class="menu-content">
-                        <li <?= $this->uri->segment(1) == 'outlet' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('admin/outlet') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">Data Outlet</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-music"></i><span class="menu-title" data-i18n="Data List">Event</span></a>
-                    <ul class="menu-content">
-                        <li <?= $this->uri->segment(1) == 'event' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('admin/event') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">Data Event</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <?php if (is_admin()) { ?>
+                <?php if (userdata('role') == 1) { ?>
                     <li class=" navigation-header"><span>User Management</span>
                     </li>
                     <li <?= $this->uri->segment(1) == 'user' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('admin/user') ?>"><i class="feather icon-users"></i><span class="menu-title" data-i18n="User Management">User Management</span></a>
@@ -184,7 +164,7 @@
 
     <!-- BEGIN: Footer-->
     <footer class="footer footer-static footer-light">
-        <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2021<a class="text-bold-800 grey darken-2" href="#">OKI POLINEMA,</a>All rights Reserved</span>
+        <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2021<a class="text-bold-800 grey darken-2" href="https://www.instagram.com/saya.royyan/" target="_blank">Muhammad Royyan Zamzami,</a>All rights Reserved</span>
             <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>
         </p>
     </footer>
