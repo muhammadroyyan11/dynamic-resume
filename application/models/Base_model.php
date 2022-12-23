@@ -54,9 +54,14 @@ class Base_model extends CI_Model
         return $this->db->get('user')->result_array();
     }
 
-    public function get($table)
+    public function get($table, $where = null)
     {
-        $sql = $this->db->get($table);
+        $this->db->select('*');
+        $this->db->from($table);
+        if ($where != null) {
+            $this->db->where($where);
+        }
+        $sql = $this->db->get();
         return $sql;
     }
 

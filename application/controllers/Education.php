@@ -16,7 +16,11 @@ class Education extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Dashboard";
+        $edu = $this->base->get('education')->result();
+        $data = [
+            'title'     => 'Education',
+            'education' => $edu
+        ];
         $this->template->load('template', 'education/data', $data);
     }
 
