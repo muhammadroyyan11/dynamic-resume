@@ -118,7 +118,7 @@
                     <ul class="menu-content">
                         <li <?= $this->uri->segment(1) == 'slide' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('admin/slide') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">Education</span></a>
                         </li>
-                        <li <?= $this->uri->segment(1) == 'as' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('tes')?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">Experience</span></a>
+                        <li <?= $this->uri->segment(1) == 'as' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('tes') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">Experience</span></a>
                         </li>
                     </ul>
                 </li>
@@ -126,7 +126,7 @@
                     <ul class="menu-content">
                         <li <?= $this->uri->segment(1) == 'education' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('education') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">Education</span></a>
                         </li>
-                        <li <?= $this->uri->segment(1) == 'as' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('experience')?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">Experience</span></a>
+                        <li <?= $this->uri->segment(1) == 'as' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('experience') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">Experience</span></a>
                         </li>
                     </ul>
                 </li>
@@ -282,6 +282,12 @@
 
             cb(start, end);
         });
+
+        $(function() {
+            $("#yearPicker").datepicker({
+                dateFormat: 'yy'
+            });
+        });​
 
         $(document).ready(function() {
             var table = $('#dataTable').DataTable({

@@ -6,9 +6,9 @@
                 <div class="card-header">
                     <h4 class="card-title">Data <?= $title ?></h4>
                     <div class="pull-right">
-                        <a href="<?= site_url('admin/user/add') ?>" class="btn btn-primary btn-flat">
+                        <button class="btn btn-primary btn-flat" data-toggle="modal" data-target="#exampleModalCenter">
                             <i class="fa fa-plus"></i> Add
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="card-content">
@@ -51,3 +51,58 @@
         </div>
     </div>
 </section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Add new recap education</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= site_url('dashboard')?>" method="POST">
+                <div class="modal-body">
+                    <!-- Modal body free text -->
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="first-name-vertical">School name</label>
+                                    <input type="text" id="first-name-vertical" class="form-control" name="school" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="yearPicker">Entry Year</label>
+                                    <input type="text" id="yearPicker" class="form-control" name="yearIn" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="contact-info-vertical">End Year</label>
+                                    <input type="text" id="contact-info-vertical" class="form-control" name="contact" placeholder="Mobile">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="password-vertical">Study Program</label>
+                                    <input type="text" id="password-vertical" class="form-control" name="contact" placeholder="Password">
+                                    <small style="color: #f71911;">(If not a university, please leave blank this form)</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- end modal body  -->
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Accept</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
