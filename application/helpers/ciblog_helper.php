@@ -41,18 +41,18 @@ function slugify($text)
    return $text;  
 }
 
-// function getDropDownList($table, $columns){
-//    $CI =& get_instance();
+function getDropDownList($table, $columns){
+   $CI =& get_instance();
 
-//    $query = $CI->db->select($columns)->from($table)->get();
+   $query = $CI->db->select($columns)->from($table)->get();
 
-//    if($query->num_rows() >= 1){
-//       $option1 = ['' => '- Pilih -'];
-//       $option2 = array_column($query->result_array(), $columns[1], $columns[0]);
-//       $options = $option1 + $option2;
+   if($query->num_rows() >= 1){
+      $option1 = ['' => '- Pilih -'];
+      $option2 = array_column($query->result_array(), $columns[1], $columns[0]);
+      $options = $option1 + $option2;
 
-//       return $options;
-//    }
+      return $options;
+   }
 
-//    return $options = ['' => '- Pilih -'];
-// }
+   return $options = ['' => '- Pilih -'];
+}
