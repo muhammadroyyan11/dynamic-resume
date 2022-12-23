@@ -4,6 +4,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Base_model extends CI_Model
 {
 
+    public function get($table, $where = null, $order = null)
+    {
+        $this->db->select('*');
+        $this->db->from($table);
+        if ($where != null) {
+            $this->db->where($where);
+        }
+
+        if ($order != null) {
+            $this->db->order_by($order, 'DESC');
+        }
+        $sql = $this->db->get();
+        return $sql;
+    }
+
     public function getUser($table, $data = null, $where = null)
     {
         if ($data != null) {
@@ -52,17 +67,6 @@ class Base_model extends CI_Model
          */
         $this->db->where('id_user !=', $id);
         return $this->db->get('user')->result_array();
-    }
-
-    public function get($table, $where = null)
-    {
-        $this->db->select('*');
-        $this->db->from($table);
-        if ($where != null) {
-            $this->db->where($where);
-        }
-        $sql = $this->db->get();
-        return $sql;
     }
 
     public function getKartikel($id = null)

@@ -16,7 +16,7 @@ class Education extends CI_Controller
 
     public function index()
     {
-        $edu = $this->base->get('education')->result();
+        $edu = $this->base->get('education', null, 'yearIn')->result();
         $data = [
             'title'     => 'Education',
             'education' => $edu
@@ -24,5 +24,37 @@ class Education extends CI_Controller
         $this->template->load('template', 'education/data', $data);
     }
 
+    public function proses()
+    {
+        $post = $this->input->post(null, true);
+        
+        $params = array(
+            'sekolah'   => $post['school'],
+            'yearIn'    => $post['yearIn'],
+            'yearEnd'   => $post['yearEnd'],
+            'user_id'   => userdata('id_user')
+        );
+
+        if ($post['program'] != null) {
+            $params['program'] = $post['program'];
+        } else {
+            $params['program'] = '-';
+        }
+
+        $this->base->insert('education', $params);
+
+        if ($this->db->affected_rows() > 0) {
+            set_pesan('Saved successfully');
+            redirect('Education');
+        } else {
+            set_pesan('An error occurred while saving data', FALSE);
+            redirect('Education');
+        }
+    }
+
+    public function delete($id)
+    {
+        # code...
+    }
   
 }
