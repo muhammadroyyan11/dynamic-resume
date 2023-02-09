@@ -18,10 +18,10 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>School name</th>
-                                        <th>Entry year</th>
-                                        <th>End Year</th>
-                                        <th>Study program</th>
+                                        <th>Institute</th>
+                                        <th>Desc</th>
+                                        <th>Date In</th>
+                                        <th>Date End</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -31,12 +31,12 @@
                                     foreach ($education as $key => $data) { ?>
                                         <tr>
                                             <td><?= $no++; ?></td>
-                                            <td><?= $data->sekolah ?></td>
-                                            <td><?= $data->yearIn ?></td>
-                                            <td><?= $data->yearEnd ?></td>
-                                            <td><?= $data->program ?></td>
+                                            <td><?= $data->company ?></td>
+                                            <td><?= $data->desc ?></td>
+                                            <td><?= $data->dateIn ?></td>
+                                            <td><?= $data->dateEnd ?></td>
                                             <td>
-                                                <a onclick="return confirm('Yakin ingin menghapus data?')" href="<?= base_url('admin/user/delete/') . $data->id_edu ?>" class="btn btn-circle btn-sm btn-danger"><i class="fa fa-fw fa-trash"></i></a>
+                                                <a onclick="return confirm('Yakin ingin menghapus data?')" href="<?= base_url('admin/user/delete/') . $data->id_ex ?>" class="btn btn-circle btn-sm btn-danger"><i class="fa fa-fw fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php } ?>
@@ -56,41 +56,60 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Add new recap education</h5>
+                <h5 class="modal-title" id="exampleModalCenterTitle">Add new recap experience</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= site_url('education/proses')?>" method="POST">
+            <form action="<?= site_url('experience/proses') ?>" method="POST">
                 <div class="modal-body">
                     <!-- Modal body free text -->
                     <div class="form-body">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="first-name-vertical">School name</label>
-                                    <input type="text" id="first-name-vertical" class="form-control" name="school" placeholder="School name" autocomplete="off">
+                                    <label for="first-name-vertical">Company name</label>
+                                    <input type="text" id="first-name-vertical" class="form-control" name="company" placeholder="Company name" autocomplete="off">
+                                    <small>eg: PT SIDO MAKMUR Tbk,</small>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="yearPicker">Entry Year</label>
-                                    <input type="text" id="yearPicker" class="form-control" name="yearIn" placeholder="Entry Year" autocomplete="off">
-                                    </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="contact-info-vertical">End Year</label>
-                                    <input type="text" id="contact-info-vertical" class="form-control" name="yearEnd" placeholder="End Year" autocomplete="off">
+                                    <label for="first-name-vertical">Description</label><br>
+                                    <textarea name="desc" cols="60" rows="10" autocomplete="off"></textarea>
+                                    <small>entry your activity on your description</small>
                                 </div>
                             </div>
                             <div class="col-12">
+                                <div class="form-group">
+                                    <label for="yearPicker">Date Join</label>
+                                    <input type="date" id="yearPicker" class="form-control" name="dateIn" placeholder="Entry Year" autocomplete="off">
+                                </div>
+
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="password-vertical">Still working there?</label>
+                                    <select name="confirm" id="confirmation" class="form-control">
+                                        <option value="Now">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="dateIn" class="col-12">
+                                <div class="form-group">
+                                    <label for="contact-info-vertical">Date Leave</label>
+                                    <input type="date" id="dateEnd" class="form-control" name="dateEnd" placeholder="End Year" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <!-- <div class="col-12">
                                 <div class="form-group">
                                     <label for="password-vertical">Study Program</label>
                                     <input type="text" id="password-vertical" class="form-control" name="program" placeholder="Enter Your Study Program" autocomplete="off">
                                     <small style="color: #f71911;">(If not a university, please leave blank this form)</small>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -103,4 +122,3 @@
         </div>
     </div>
 </div>
-

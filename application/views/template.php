@@ -114,19 +114,13 @@
 
                 <li class=" navigation-header"><span>Kelola Biodata</span>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Data List">Biodata</span></a>
-                    <ul class="menu-content">
-                        <li <?= $this->uri->segment(1) == 'slide' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('admin/slide') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">Education</span></a>
-                        </li>
-                        <li <?= $this->uri->segment(1) == 'as' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('tes') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">Experience</span></a>
-                        </li>
-                    </ul>
+                <li <?= $this->uri->segment(1) == 'biodata' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('biodata') ?>"><i class="feather icon-user"></i><span class="menu-item" data-i18n="List View">Biodata</span></a>
                 </li>
                 <li class=" nav-item"><a href="#"><i class="feather icon-edit-2"></i><span class="menu-title" data-i18n="Data List">Resume</span></a>
                     <ul class="menu-content">
                         <li <?= $this->uri->segment(1) == 'education' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('education') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">Education</span></a>
                         </li>
-                        <li <?= $this->uri->segment(1) == 'as' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('experience') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">Experience</span></a>
+                        <li <?= $this->uri->segment(1) == 'experience' || $this->uri->segment(1) == '' ? 'class="active nav-item"' : '' ?>><a href="<?= site_url('experience') ?>"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">Experience</span></a>
                         </li>
                     </ul>
                 </li>
@@ -229,16 +223,67 @@
     <script src="<?= base_url() ?>assets/ckeditor/ckeditor.js"></script>
 
     <script>
+        var confirmation = $("#confirmation");
+        var hidden = $("#dateIn");
+
+        hidden.hide();
+        
+        confirmation.change(function(){
+            if ($(this).val() == 'no') {
+                hidden.show();
+            } else {
+                hidden.hide();
+                document.getElementById("dateEnd").value = "Now";
+            }
+        })
+        // $(document).ready(function() {
+        //     $('#confirmation').on('change', function() {
+        //         if ($(this).val() == 'no') {
+        //             $("#dateIn").show();
+        //             console.log('s');
+        //         } else {
+        //             $("#dateIn").hide();
+        //         }
+        //     });
+        // });
+        // $("#confirmation").change(function() {
+        //     if ($(this).val() == "no") {
+        //         $('#dateIn').show();
+        //     } else {
+        //         $('#dateIn').hide();
+        //     }
+        // });
+    </script>
+
+    <script>
         var hoursLabel = document.getElementById("hours");
         var minutesLabel = document.getElementById("minutes");
         var secondsLabel = document.getElementById("seconds");
         setInterval(setTime, 1000);
 
-        function setTime() {
-            secondsLabel.innerHTML = pad(Math.floor(new Date().getSeconds()));
-            minutesLabel.innerHTML = pad(Math.floor(new Date().getMinutes()));
-            hoursLabel.innerHTML = pad(Math.floor(new Date().getHours()));
-        }
+        // function setTime() {
+        //     secondsLabel.innerHTML = pad(Math.floor(new Date().getSeconds()));
+        //     minutesLabel.innerHTML = pad(Math.floor(new Date().getMinutes()));
+        //     hoursLabel.innerHTML = pad(Math.floor(new Date().getHours()));
+        // }
+
+        // $(document).ready(function() {
+        //     $('#confirmation').on('change', function() {
+        //         if ($(this).val() == 'no') {
+        //             $("#dateIn").show();
+        //             console.log('s');
+        //         } else {
+        //             $("#dateIn").hide();
+        //         }
+        //     });
+        // });
+        // $("#confirmation").change(function() {
+        //     if ($(this).val() == "no") {
+        //         $('#dateIn').show();
+        //     } else {
+        //         $('#dateIn').hide();
+        //     }
+        // });
 
         function pad(val) {
             var valString = val + "";
