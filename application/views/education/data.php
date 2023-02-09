@@ -36,7 +36,7 @@
                                             <td><?= $data->yearEnd ?></td>
                                             <td><?= $data->program ?></td>
                                             <td>
-                                                <a onclick="return confirm('Yakin ingin menghapus data?')" href="<?= base_url('admin/user/delete/') . $data->id_edu ?>" class="btn btn-circle btn-sm btn-danger"><i class="fa fa-fw fa-trash"></i></a>
+                                                <a onclick="return confirm('Yakin ingin menghapus data?')" href="<?= base_url('educaiton/delete/') . $data->id_edu ?>" class="btn btn-circle btn-sm btn-danger"><i class="fa fa-fw fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php } ?>
@@ -97,7 +97,7 @@
                     <!-- end modal body  -->
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Accept</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>

@@ -54,7 +54,16 @@ class Experience extends CI_Controller
 
     public function delete($id)
     {
-        # code...
+        $this->base->delete('experience', 'id_ex', $id);
+
+        
+        if ($this->db->affected_rows() > 0) {
+            set_pesan('Delete successfully');
+        } else {
+            set_pesan('An error occurred while deleted data', FALSE);
+        }
+
+        redirect('Experience');
     }
   
 }

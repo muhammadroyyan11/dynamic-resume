@@ -18,7 +18,7 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Institute</th>
+                                        <th>Company</th>
                                         <th>Desc</th>
                                         <th>Date In</th>
                                         <th>Date End</th>
@@ -36,7 +36,7 @@
                                             <td><?= $data->dateIn ?></td>
                                             <td><?= $data->dateEnd ?></td>
                                             <td>
-                                                <a onclick="return confirm('Yakin ingin menghapus data?')" href="<?= base_url('admin/user/delete/') . $data->id_ex ?>" class="btn btn-circle btn-sm btn-danger"><i class="fa fa-fw fa-trash"></i></a>
+                                                <a onclick="return confirm('Yakin ingin menghapus data?')" href="<?= base_url('experience/delete/') . $data->id_ex ?>" class="btn btn-circle btn-sm btn-danger"><i class="fa fa-fw fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php } ?>
@@ -102,21 +102,13 @@
                                     <input type="date" id="dateEnd" class="form-control" name="dateEnd" placeholder="End Year" autocomplete="off">
                                 </div>
                             </div>
-
-                            <!-- <div class="col-12">
-                                <div class="form-group">
-                                    <label for="password-vertical">Study Program</label>
-                                    <input type="text" id="password-vertical" class="form-control" name="program" placeholder="Enter Your Study Program" autocomplete="off">
-                                    <small style="color: #f71911;">(If not a university, please leave blank this form)</small>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
 
                     <!-- end modal body  -->
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Accept</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>
